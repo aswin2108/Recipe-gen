@@ -1,133 +1,122 @@
-// .tagsContainer{
-//     background-color: rgb(240, 57, 57);
-// }
 @import "./../../../../node_modules/ngx-spinner/animations/ball-circus.css";
 
-.generatorTitle{
-    font-family: "Protest Riot", sans-serif;
-font-weight: 400;
-font-size: 50px;
-font-style: normal;
-text-align: center;
-width: 100vw;
-padding-top: 10px;
-// display: flex;
+.generatorTitle {
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  font-style: normal;
+  text-align: center;
+  width: 100vw;
+  padding-top: 10px;
 }
-.titleIcon{
-    // display: flex;
-    font-size: 40px !important;
-    text-align: center;
+.titleIcon {
+  font-size: 40px !important;
+  text-align: center;
 }
-.invert{
-  transform: scaleX(-1)
+.invert {
+  transform: scaleX(-1);
 }
 
-.randomMealContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
+.randomMealContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
 }
-.sourceBtn{
-    height: fit-content;
+.sourceBtn {
+  height: fit-content;
 }
-.shoppingTagIcon{
-    font-size: smaller;
+.shoppingTagIcon {
+  font-size: smaller;
 }
-.mealTitle{
-    color: white;
+.mealTitle {
+  color: white;
 }
-.hero-container{
-    width: 90vw;
-    padding: 15px;
-    border-radius: 15px;
+.hero-container {
+  width: 90vw;
+  padding: 15px;
+  border-radius: 15px;
 }
-.hero-section{
-    width: 100vw;
-    height: 35vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-section {
+  width: 100vw;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.incredients-container{
-    height: 150px;
-    overflow-y: scroll;
-    border-radius: 15px;
+.incredients-container {
+  height: 150px;
+  overflow-y: scroll;
+  border-radius: 15px;
 }
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
- 
-  
-  thead th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    text-align: left;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  tbody tr:nth-child(odd) {
-    background-color: #b8b3b3;
-  }
-  
-  tbody td {
-    // padding: 10px;
-    text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
 
-  }
-  ::-webkit-scrollbar {
-      width: 4px;
-      // height: 8px;
-    }
-    ::-webkit-scrollbar-thumb {
-    //   visibility: hidden;
-      background-color: rgba(0, 0, 0, 0.3);
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    ::-webkit-scrollbar-track {
-    //   visibility: hidden;
-    background-color: rgb(220,53,69);
-  }
-  .no-bullet {
-    list-style-type: none;
-  }
-  .secondSectionContainer{
-    display: flex;
-    justify-content: center;
-  }
-  .secondSection{
-    display: flex;
-    border-radius: 20px;
-    overflow: hidden;
-    height: 30vh;
-    width: 90vw;
-  }
-  .youtubeVideo{
-    height: 100%;
-    width: auto;
-  }
-  .instructionsContainer{
-    height: 28vh;
-    overflow-y: scroll;
-  }
-  .nextBtnContainer{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .recipeBtn{
-    width: 15%;
-  }
+thead th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tbody tr:nth-child(odd) {
+  background-color: #b8b3b3;
+}
+
+tbody td {
+  text-align: center;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(220, 53, 69);
+}
+.no-bullet {
+  list-style-type: none;
+}
+.secondSectionContainer {
+  display: flex;
+  justify-content: center;
+}
+.secondSection {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30vh;
+  width: 90vw;
+}
+.youtubeVideo {
+  height: 100%;
+  width: auto;
+}
+.instructionsContainer {
+  height: 28vh;
+  overflow-y: scroll;
+}
+.nextBtnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.recipeBtn {
+  width: 15%;
+}

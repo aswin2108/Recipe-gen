@@ -7,18 +7,12 @@ import { RecipeComponent } from './pages/recipe/recipe.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-
 @NgModule({
-  declarations: [
-    MealComponent,
-    RecipeComponent
-  ],
+  declarations: [MealComponent, RecipeComponent],
   imports: [
     CommonModule,
     MealRoutingModule,
     NgxSpinnerModule,
-    // BrowserAnimationsModule
-  ]
+  ],
 })
-export class MealModule { }
+export class MealModule {}

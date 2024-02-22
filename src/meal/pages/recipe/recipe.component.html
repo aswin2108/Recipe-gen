@@ -1,86 +1,91 @@
-<h2 class="generatorTitle"><span class="material-symbols-outlined titleIcon">
-  shuffle
-  </span>Random Recipe Generator<span class="material-symbols-outlined titleIcon invert">
-    shuffle
+<div>
+  <h2 class="generatorTitle"><span class="material-symbols-outlined titleIcon">
+      shuffle
+    </span>Random Recipe Generator<span class="material-symbols-outlined titleIcon invert">
+      shuffle
     </span></h2>
-<div class="randomMealContainer">
-<div class="hero-section">
-<div class="hero-container bg-danger">
-  <div class="d-flex justify-content-around  ">
-    <div class="d-flex w-75 gap-4">
-      <img src="{{ newMeal.mealThumb }}" width="20%" class="rounded-circle" />
-      <div>
-        <div class="d-flex align-items-center mealTitle">
-          <h2>
-            <span class="material-symbols-outlined"> restaurant_menu </span>{{ newMeal.strMeal }}
-          </h2>&nbsp;&nbsp;&nbsp;
-          <a class="btn btn-outline-dark d-flex align-items-center sourceBtn" target="_blank"
-            href="{{newMeal.strSource}}"><span class="material-symbols-outlined">
-              search
-            </span></a>
-        </div>
-        <div class="d-flex gap-2 ">
-          <span class="rounded-pill bg-light p-1 categoryList d-flex flex-row"><span class="material-symbols-outlined"> category
-            </span>{{ newMeal.strCategory }}</span>
-          <span class="rounded-pill bg-light p-1 d-flex flex-row"><span class="material-symbols-outlined"> pin_drop </span>{{
-            newMeal.strArea }}</span>
-        </div>
-        <ul class="d-flex p-0 gap-2 mt-4">
-          <li *ngFor="let item of newMeal.tags" class="list-group gap-3">
-            <div class="d-flex justify-content-center align-items-center bg-light rounded-pill p-1 tagsContainer">
-              <span class="material-symbols-outlined shoppingTagIcon">
-                shoppingmode
-              </span>
-              {{ item }}
+  <div class="randomMealContainer">
+    <div class="hero-section">
+      <div class="hero-container bg-danger">
+        <div class="d-flex justify-content-around  ">
+          <div class="d-flex w-75 gap-4">
+            <img src="{{ newMeal.mealThumb }}" width="20%" class="rounded-circle" />
+            <div>
+              <div class="d-flex align-items-center mealTitle">
+                <h2>
+                  <span class="material-symbols-outlined"> restaurant_menu </span>{{ newMeal.strMeal }}
+                </h2>&nbsp;&nbsp;&nbsp;
+                <a class="btn btn-outline-dark d-flex align-items-center sourceBtn" target="_blank"
+                  href="{{newMeal.strSource}}"><span class="material-symbols-outlined">
+                    search
+                  </span></a>
+              </div>
+              <div class="d-flex gap-2 ">
+                <span class="rounded-pill bg-light p-1 categoryList d-flex flex-row"><span
+                    class="material-symbols-outlined"> category
+                  </span>{{ newMeal.strCategory }}</span>
+                <span class="rounded-pill bg-light p-1 d-flex flex-row"><span class="material-symbols-outlined">
+                    pin_drop
+                  </span>{{
+                  newMeal.strArea }}</span>
+              </div>
+              <ul class="d-flex p-0 gap-2 mt-4">
+                <li *ngFor="let item of newMeal.tags" class="list-group gap-3">
+                  <div class="d-flex justify-content-center align-items-center bg-light rounded-pill p-1 tagsContainer">
+                    <span class="material-symbols-outlined shoppingTagIcon">
+                      shoppingmode
+                    </span>
+                    {{ item }}
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="d-flex justify-content-center align-itms-center h-100">
-      <div class="incredients-container">
-        <!-- <ul>
+          </div>
+          <div class="d-flex justify-content-center align-itms-center h-100">
+            <div class="incredients-container">
+              <!-- <ul>
           <li *ngFor="let item of newMeal.incredients, let i=index">{{item}} - {{newMeal.measurements[i]}}</li>
         </ul> -->
-        <table>
-          <thead>
-            <tr>
-              <th>Ingredient</th>
-              <th>Measurement</th>
-            </tr>
-          </thead>
-          <tbody>
-            <ng-container *ngFor="let item of newMeal.incredients; let i=index">
-              <tr>
-                <td>{{ item }}</td>
-                <td>{{ newMeal.measurements[i] }}</td>
-              </tr>
-            </ng-container>
-          </tbody>
-        </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ingredient</th>
+                    <th>Measurement</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let item of newMeal.incredients; let i=index">
+                    <tr>
+                      <td>{{ item }}</td>
+                      <td>{{ newMeal.measurements[i] }}</td>
+                    </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="secondSectionContainer">
+      <div class="secondSection">
+        <iframe *ngIf="ytLink!==''" [src]="newMeal.strYoutube" class="youtubeVideo" allowfullscreen></iframe>
+        <img *ngIf="ytLink===''" src="./../../../../assets/noVideo.jpg" alt="noVideo img" class="youtubeVideo" />
+        <div class="instructionsContainer">
+          <ul>
+            <li *ngFor="let item of newMeal.instructions" [ngClass]="{'no-bullet': item.length <= 6}"><ng-container
+                *ngIf="item.length > 6">{{ item }}</ng-container></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="nextBtnContainer">
+      <button class="btn btn-outline-danger recipeBtn" (click)="fetchData()"><span class="material-symbols-outlined">
+          fastfood
+        </span>Random-Recipe...</button>
     </div>
   </div>
 </div>
-</div>
-<div class="secondSectionContainer">
-<div class="secondSection">
-  <iframe *ngIf="ytLink!==''" [src]="newMeal.strYoutube" class="youtubeVideo" allowfullscreen></iframe>
-  <img *ngIf="ytLink===''" src="./../../../../assets/noVideo.jpg" alt="noVideo img" class="youtubeVideo"/>
-  <div class="instructionsContainer">
-    <ul>
-      <li *ngFor="let item of newMeal.instructions" [ngClass]="{'no-bullet': item.length <= 6}"><ng-container *ngIf="item.length > 6">{{ item }}</ng-container></li>
-    </ul>
-  </div>
-</div>
-</div>
-<div class="nextBtnContainer">
-<button class="btn btn-outline-danger recipeBtn" (click)="fetchData()"><span class="material-symbols-outlined">
-  fastfood
-  </span>Random-Recipe...</button>
-</div>
-</div>
-
-<ngx-spinner bdColor="rgba(7,1,1,0.8)"  type="ball-circus">
+<ngx-spinner bdColor="rgba(7,1,1,0.8)" type="ball-circus">
   <p style="color: white">Loading...</p>
 </ngx-spinner>
