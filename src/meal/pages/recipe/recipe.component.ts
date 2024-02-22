@@ -17,21 +17,28 @@ export class RecipeComponent implements OnInit {
   ) {}
 
   newMeal: Meal = new Meal();
-  ytLink: string = '';
+  ytLink = '';
 
   ngOnInit(): void {
     this.fetchData();
   }
-  fetchData() {
+
+  /**
+   * Calls the getRecipe function and subscribes to it, 
+   * recieves data in the RawMeal format and formats the 
+   * received data in to Meals format by performing required 
+   * splits and mergers 
+   */
+  fetchData():void {
     this.spinner.show();
     const self = this;
     this.mealsService.getRecipe().subscribe({
       next(data: { [key: string]: any }) {
         self.ytLink = data['meals'][0].strYoutube;
 
-        const cleanUpData = () => {
-          let incredients = [];
-          let measurements = [];
+        const cleanUpData = (): void => {
+          const incredients = [];
+          const measurements = [];
           let insrtuctions = [];
           let tags = [];
 
@@ -73,7 +80,7 @@ export class RecipeComponent implements OnInit {
         };
         cleanUpData();
       },
-      error(msg) {
+      error(msg:string) {
         console.log(msg);
       },
       complete() {
@@ -81,6 +88,13 @@ export class RecipeComponent implements OnInit {
       },
     });
   }
+
+  /**
+   * Converts the API received url into embedable url by replacing watch?v= by embed/ 
+   * then sanitizes the url using Dom sanitizer and stores the sanitized url in 
+   * newMeal.strYoutube which is of SafeResourceUrl type
+   * @param url The unsanitized youtube URL received from the api having watch?v as a part of the url
+   */
   convertUrl(url: string): void {
     const sanitizedUrl = url.replace('watch?v=', 'embed/');
     this.newMeal.strYoutube =

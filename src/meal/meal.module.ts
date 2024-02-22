@@ -5,7 +5,6 @@ import { MealRoutingModule } from './meal-routing.module';
 import { MealComponent } from './meal.component';
 import { RecipeComponent } from './pages/recipe/recipe.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [MealComponent, RecipeComponent],
